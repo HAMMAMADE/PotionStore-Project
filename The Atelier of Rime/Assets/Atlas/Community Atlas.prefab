@@ -1,0 +1,358 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1337459749464112}
+  m_IsPrefabParent: 1
+--- !u!1 &1337459749464112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4021729855497082}
+  - component: {fileID: 114091766864742964}
+  m_Layer: 0
+  m_Name: Community Atlas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4021729855497082
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337459749464112}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114091766864742964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337459749464112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 68b1a5e8f0307cf43ae235272b3a4224, type: 2}
+  mSprites:
+  - name: LastPixelFont_0
+    x: 0
+    y: 9
+    width: 219
+    height: 20
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 34
+    paddingTop: 2
+    paddingBottom: 234
+  - name: "NPC_\uACE0\uC591\uC774\uC190\uB2D8-\uBCF4\uD1B5"
+    x: 1546
+    y: 1585
+    width: 294
+    height: 463
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 63
+    paddingRight: 43
+    paddingTop: 37
+    paddingBottom: 0
+  - name: "NPC_\uACE0\uC591\uC774\uC190\uB2D8-\uC911\uB3C5"
+    x: 1501
+    y: 1103
+    width: 305
+    height: 463
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 44
+    paddingTop: 37
+    paddingBottom: 0
+  - name: "NPC_\uB110"
+    x: 220
+    y: 8
+    width: 20
+    height: 21
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 318
+    paddingRight: 62
+    paddingTop: 447
+    paddingBottom: 32
+  - name: "NPC_\uB77C\uC778-\uBCF4\uD1B5"
+    x: 470
+    y: 11
+    width: 341
+    height: 481
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 56
+    paddingRight: 3
+    paddingTop: 19
+    paddingBottom: 0
+  - name: "NPC_\uB77C\uC778-\uC6C3\uC74C"
+    x: 470
+    y: 493
+    width: 384
+    height: 481
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 13
+    paddingRight: 3
+    paddingTop: 19
+    paddingBottom: 0
+  - name: "NPC_\uB77C\uC778-\uD798\uB4EC"
+    x: 863
+    y: 1556
+    width: 341
+    height: 492
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 56
+    paddingRight: 3
+    paddingTop: 8
+    paddingBottom: 0
+  - name: "NPC_\uB9C8\uBC95\uC120\uC0DD-\uBCF4\uD1B5"
+    x: 470
+    y: 975
+    width: 369
+    height: 536
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 22
+    paddingRight: 9
+    paddingTop: 14
+    paddingBottom: 0
+  - name: "NPC_\uB9C8\uBC95\uC120\uC0DD-\uCE5C\uC808"
+    x: 470
+    y: 1512
+    width: 392
+    height: 536
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 4
+    paddingTop: 14
+    paddingBottom: 0
+  - name: "NPC_\uC0AC\uB0E5\uD130\uC9C0\uAE30-\uBCF4\uD1B5"
+    x: 1173
+    y: 1044
+    width: 327
+    height: 511
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 59
+    paddingTop: 39
+    paddingBottom: 0
+  - name: "NPC_\uC6A9\uBCD1\uB300\uC7A5-\uBC84\uC12F"
+    x: 0
+    y: 458
+    width: 469
+    height: 527
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 11
+    paddingTop: 23
+    paddingBottom: 0
+  - name: "NPC_\uC6A9\uBCD1\uB300\uC7A5-\uBCF4\uD1B5"
+    x: 0
+    y: 1516
+    width: 469
+    height: 532
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 11
+    paddingTop: 18
+    paddingBottom: 0
+  - name: "NPC_\uC6A9\uBCD1\uB300\uC7A5-\uBD88\uC548"
+    x: 0
+    y: 986
+    width: 469
+    height: 529
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 11
+    paddingTop: 21
+    paddingBottom: 0
+  - name: "NPC_\uC804\uC0B0\uC591-\uBCF4\uD1B5"
+    x: 855
+    y: 488
+    width: 327
+    height: 511
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 59
+    paddingTop: 39
+    paddingBottom: 0
+  - name: "NPC_\uC804\uC0B0\uC591-\uC124\uBA85"
+    x: 1183
+    y: 532
+    width: 324
+    height: 511
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 62
+    paddingTop: 39
+    paddingBottom: 0
+  - name: "NPC_\uC804\uC0B0\uC591-\uC99D\uBA85"
+    x: 840
+    y: 1000
+    width: 332
+    height: 511
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 54
+    paddingTop: 39
+    paddingBottom: 0
+  - name: NPCbase
+    x: 1205
+    y: 1567
+    width: 340
+    height: 481
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 56
+    paddingRight: 4
+    paddingTop: 19
+    paddingBottom: 0
+  - name: "Player_\uB77C\uC784-\uB180\uB78C"
+    x: 812
+    y: 60
+    width: 292
+    height: 427
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 50
+    paddingRight: 58
+    paddingTop: 23
+    paddingBottom: 0
+  - name: "Player_\uB77C\uC784-\uBCF4\uD1B5"
+    x: 1768
+    y: 247
+    width: 279
+    height: 427
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 50
+    paddingRight: 71
+    paddingTop: 23
+    paddingBottom: 0
+  - name: "Player_\uB77C\uC784-\uC6B0\uC6B8"
+    x: 1508
+    y: 675
+    width: 279
+    height: 427
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 50
+    paddingRight: 71
+    paddingTop: 23
+    paddingBottom: 0
+  - name: "Player_\uB77C\uC784-\uC6C3\uC74C"
+    x: 1183
+    y: 104
+    width: 304
+    height: 427
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 50
+    paddingRight: 46
+    paddingTop: 23
+    paddingBottom: 0
+  - name: "Player_\uB77C\uC784-\uD654\uB0A8"
+    x: 1488
+    y: 104
+    width: 279
+    height: 427
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 50
+    paddingRight: 71
+    paddingTop: 23
+    paddingBottom: 0
+  - name: "Player_\uB77C\uC784-\uD798\uB4EC"
+    x: 0
+    y: 30
+    width: 327
+    height: 427
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 49
+    paddingRight: 24
+    paddingTop: 23
+    paddingBottom: 0
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+  mCoordinates: 0
+  sprites: []

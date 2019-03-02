@@ -121,11 +121,11 @@ public class SkillSetManager : MonoBehaviour
     public GameObject Level2Skill3;
     public GameObject Level3Skill3;
 
-    BoxCollider AroowButtonCol0;
-    BoxCollider AroowButtonCol1;
-    BoxCollider AroowButtonCol2;
-    BoxCollider AroowButtonCol3;
-    BoxCollider AroowButtonCol4;
+    BoxCollider ArrowButtonCol0;
+    BoxCollider ArrowButtonCol1;
+    BoxCollider ArrowButtonCol2;
+    BoxCollider ArrowButtonCol3;
+    BoxCollider ArrowButtonCol4;
 
     Vector3 UsingSkill3Pos;
 
@@ -197,11 +197,11 @@ public class SkillSetManager : MonoBehaviour
         Guage = GameObject.Find("AlchemyManager").GetComponent<AlchemyManager>();
         AlchemyButton = GameObject.Find("AlchemyButton").GetComponent<BoxCollider>();
 
-        AroowButtonCol0 = GameObject.Find("ArrowButton0").GetComponent<BoxCollider>();
-        AroowButtonCol1 = GameObject.Find("ArrowButton1").GetComponent<BoxCollider>();
-        AroowButtonCol2 = GameObject.Find("ArrowButton2").GetComponent<BoxCollider>();
-        AroowButtonCol3 = GameObject.Find("ArrowButton3").GetComponent<BoxCollider>();
-        AroowButtonCol4 = GameObject.Find("ArrowButton4").GetComponent<BoxCollider>();
+        ArrowButtonCol0 = GameObject.Find("ArrowButton0").GetComponent<BoxCollider>();
+        ArrowButtonCol1 = GameObject.Find("ArrowButton1").GetComponent<BoxCollider>();
+        ArrowButtonCol2 = GameObject.Find("ArrowButton2").GetComponent<BoxCollider>();
+        ArrowButtonCol3 = GameObject.Find("ArrowButton3").GetComponent<BoxCollider>();
+        ArrowButtonCol4 = GameObject.Find("ArrowButton4").GetComponent<BoxCollider>();
     }
 
     //--------------------------------------------
@@ -635,21 +635,25 @@ public class SkillSetManager : MonoBehaviour
 
     public void Skill3Push()//스킬 아이콘 클릭시 미니게임창 을 띄우는 함수
     {
+        //▼스킬이 발동하기 위한 조건들 cantEnfPotion은 스킬을 쓸수 있는 포션인지 확인하는 변수
         if (AlchemyManager.pushMaterial == true && AlchemyManager.pushFlask == true && StatusManager.Mana != 0 && !cantChange)
         {
-            SkillAnim3.enabled = true;
+            SkillAnim3.enabled = true;//미니게임 화면상의 캐릭터 애니메이션이 작동하도록 한다.
+
             SkillPoints += 1;
             UpdataSkillPoints();
             StatusManager.Mana -= 1;
             ManaState.UpdateManaState();
-            IsSkillGame = true;
-            AlchemyButton.enabled = false;
-            SkillTime.StopCoroutine("TimeFlow");
+
+            IsSkillGame = true;//미니게임 중 이면 True 아니라면 False
+            AlchemyButton.enabled = false;//미니게임중 에는 포션완성 버튼을 누를수 없다
+
+            SkillTime.StopCoroutine("TimeFlow");//미니게임 중에는 게임상 시간이 흐르지 않는다
             TimeManager.nowFlow = false;
             UsingSkill3Pos = UsingSkillSet3.position;
             UsingSkill3Pos.y += 10f;
             MagicTime = 0.5f;
-            StartCoroutine("UsingSkill3");
+            StartCoroutine("UsingSkill3");//미니게임 화면을 이동시키는 UsingSkill3 코루틴
             PushSkillButton();
         }
         else
@@ -664,12 +668,13 @@ public class SkillSetManager : MonoBehaviour
     {
         yield return null;
 
-        StartCoroutine("UsingSkill3");
+        StartCoroutine("UsingSkill3");//조건이 달성 될때까지 코루틴은 반복됨
 
         if (UsingSkillSet3.position == UsingSkill3Pos)
         {
+            //미니게임 화면이 나타나면 UsingSkill3 코루틴을 끝내고 게임을 시작하도록 한다
             StopCoroutine("UsingSkill3");
-            StartSkill3();
+            StartSkill3();//게임시작 함수
             yield break;
         }
         UsingSkillSet3.position = Vector3.Lerp(UsingSkillSet3.position, UsingSkill3Pos, 0.5f);
@@ -677,30 +682,35 @@ public class SkillSetManager : MonoBehaviour
 
     public void StartSkill3()
     {
-        CheckNum = 0;
-        AroowButtonCol0.enabled = false;
-        AroowButtonCol1.enabled = false;
-        AroowButtonCol2.enabled = false;
-        AroowButtonCol3.enabled = false;
-        AroowButtonCol4.enabled = false;
+        CheckNum = 0;//버튼입력이 처음부터 시작하도록 초기화
+        ArrowButtonCol0.enabled = false;
+        ArrowButtonCol1.enabled = false;
+        ArrowButtonCol2.enabled = false;
+        ArrowButtonCol3.enabled = false;
+        ArrowButtonCol4.enabled = false;
+        //입력해야 할 방향이 나타나는동안은 버튼을 누를수 없도록 한다
         switch (Skill3Level)
-        {
+        {//스킬 레벨에 따라 미니게임의 난이도를 조정한다
             case 1:
-                countNum = 4;
+                countNum = 4;//4개의 방향을 입력해야 한다
+                //레벨1의 난이도가 선택되었으므로 나머지 난이도는 보여지지 않도록 함
                 Level1Skill3.SetActive(true);
                 Level2Skill3.SetActive(false);
                 Level3Skill3.SetActive(false);
+                //버튼을 입력받아야하므로 초기화 
                 InputArrows = new UISprite[countNum];
                 TargetArrows = new int[countNum];
                 GetArrows = new int[countNum];
+
                 for (int index = 0; index < countNum; index++)
                 {
                     GetArrows[index] = 5;
                     InputArrows[index] = GameObject.Find("Arrow" + index.ToString()).GetComponent<UISprite>();
-                    TargetArrows[index] = Random.Range(0, 4);
+                    TargetArrows[index] = Random.Range(0, 4);//무작위로 방향을 정한다
                     InputArrows[index].spriteName = "ArrowButton" + TargetArrows[index].ToString();
                 }
                 break;
+
             case 2:
                 countNum = 5;
                 Level1Skill3.SetActive(false);
@@ -738,6 +748,7 @@ public class SkillSetManager : MonoBehaviour
     }
     IEnumerator CommendReset()
     {
+        //미니게임 시작을 위해 나타난 방향들을 가린다
         yield return new WaitForSeconds(2f + Skill3Level - 1f);
 
         for (int index = 0; index < countNum; index++)
@@ -745,14 +756,14 @@ public class SkillSetManager : MonoBehaviour
             InputArrows[index].spriteName = "NothingButton";
         }
 
-        AroowButtonCol0.enabled = true;
-        AroowButtonCol1.enabled = true;
-        AroowButtonCol2.enabled = true;
-        AroowButtonCol3.enabled = true;
-        AroowButtonCol4.enabled = true;
+        ArrowButtonCol0.enabled = true;
+        ArrowButtonCol1.enabled = true;
+        ArrowButtonCol2.enabled = true;
+        ArrowButtonCol3.enabled = true;
+        ArrowButtonCol4.enabled = true;
     }
 
-    public void CheckCommend()
+    public void CheckCommend()//버튼이 눌러지면 눌린 버튼과 눌러야할 버튼이 같은지 검사한다
     {
         if (TargetArrows[CheckNum - 1] == GetArrows[CheckNum - 1])
         {
@@ -770,7 +781,7 @@ public class SkillSetManager : MonoBehaviour
             message.PopUpEventMesg("[000000]스킬발동에 [F10000]실패[000000]했습니다.");
         }
     }
-
+    //▼버튼의 OnClik 에 할당되는 함수들 버튼을 누르면 방향이 입력되며 각 방향은 숫자로 구분함
     public void PushArrow0()
     {
         SoundManager.sounds["MagicSound"].Play();
@@ -812,7 +823,7 @@ public class SkillSetManager : MonoBehaviour
         CheckCommend();
     }
 
-    public void EndSkill3()
+    public void EndSkill3()//게임이 끝나면 이 함수가 시작된다
     {
         SkillAnim3.enabled = false;
         IsSkillGame = false;

@@ -10,7 +10,7 @@ public class LoadingManager : MonoBehaviour {
     // Use this for initialization
     //public SpriteRenderer LoadingImage; 
 	void Start () {
-        Screen.SetResolution(Screen.width, Screen.width * 9 / 16, true);
+        Screen.SetResolution(Screen.width, Screen.width * 9 / 16, false);
         Application.targetFrameRate = 55;
         StartCoroutine(LoadScene());
 	}

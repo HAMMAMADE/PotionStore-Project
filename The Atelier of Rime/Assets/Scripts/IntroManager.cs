@@ -38,7 +38,7 @@ public class IntroManager : MonoBehaviour {//메뉴화면에서 작동하는 각
 
     private void Awake()
     {
-        Screen.SetResolution(Screen.width, Screen.width * 9 / 16, true);
+       // Screen.SetResolution(Screen.width, Screen.width * 9 / 16, true);
         Application.targetFrameRate = 50;
 
         backTop = GameObject.Find("MainMenu_inframe");

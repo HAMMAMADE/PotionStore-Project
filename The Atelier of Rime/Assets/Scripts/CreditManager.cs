@@ -9,7 +9,7 @@ public class CreditManager : MonoBehaviour
 
     void Start()
     {
-        Screen.SetResolution(Screen.width, Screen.width * 9 / 16, true);
+        //Screen.SetResolution(Screen.width, Screen.width * 9 / 16, true);
         Credit.SetTrigger("StartCredit");
         SoundManager.sounds["CartoonBGM"].Play();
         StartCoroutine("CreditVolum");

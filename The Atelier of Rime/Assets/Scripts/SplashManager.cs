@@ -8,7 +8,7 @@ public class SplashManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Application.targetFrameRate = 55;
-        Screen.SetResolution(Screen.width, Screen.width * 9 / 16, true);
+        Screen.SetResolution(Screen.width, Screen.width * 9 / 16, false);
         StartCoroutine("Splashend");
     }
 

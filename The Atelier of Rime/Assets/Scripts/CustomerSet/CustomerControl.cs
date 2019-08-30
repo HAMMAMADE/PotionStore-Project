@@ -17,7 +17,7 @@ public class CustomerControl : MonoBehaviour {
     public GameObject Emotion_Bad;
 
     public string CustomerName;
-    public string CustomerGrade;//손님의 등급 (삭제예정)
+    //public string CustomerGrade;//손님의 등급 (삭제예정)
     public string CustomerType;//손님의 타입, 일반손님, 잡상인, 보스손님
     public Sprite CustomerIcon;//손님아이콘
     [TextArea]

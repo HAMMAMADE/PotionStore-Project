@@ -85,7 +85,7 @@ public class ButtonManager : MonoBehaviour {
         firstSlide = true;
         StartCoroutine("BackButtonClick");
         Application.targetFrameRate = 55;
-        Screen.SetResolution(Screen.width, Screen.width * 9 / 16, true);
+       // Screen.SetResolution(Screen.width, Screen.width * 9 / 16, true);
         
         switch (takedNum)
         {
@@ -108,9 +108,9 @@ public class ButtonManager : MonoBehaviour {
 
     public void ButtonStart()
     {
-        if(File.Exists(Application.persistentDataPath.Replace("/Andriod/data/kr.Hamma.pharmacy/files", "") + fileName)){
+        if(File.Exists(Application.dataPath.Replace("/Assets", "") + fileName)){
 
-            StreamReader streamReader = new StreamReader(Application.persistentDataPath.Replace("/Andriod/data/kr.Hamma.pharmacy/files", "") + fileName);
+            StreamReader streamReader = new StreamReader(Application.dataPath.Replace("/Assets", "") + fileName);
             dataVo = JsonMapper.ToObject<DataVo>(streamReader.ReadToEnd());
             streamReader.Close();
 
@@ -118,7 +118,7 @@ public class ButtonManager : MonoBehaviour {
             firstGame = bool.Parse(dataVo.isFirst);
         }
 
-       if(File.Exists(Application.persistentDataPath.Replace("/Andriod/data/kr.Hamma.pharmacy/files", "") + fileName)){
+       if(File.Exists(Application.dataPath.Replace("/Assets", "") + fileName)){
             if (!firstGame)
             {
                 Loadcollider.enabled = true;
@@ -144,7 +144,7 @@ public class ButtonManager : MonoBehaviour {
         
         SoundManager.sounds["Click (7)"].Play();
         
-        if(File.Exists(Application.persistentDataPath.Replace("/Andriod/data/kr.Hamma.pharmacy/files", "") + fileName)) System.IO.File.Delete(Application.persistentDataPath.Replace("/Andriod/data/kr.Hamma.pharmacy/files", "") + fileName);
+        if(File.Exists(Application.dataPath.Replace("/Assets", "") + fileName)) System.IO.File.Delete(Application.dataPath.Replace("/Assets", "") + fileName);
 
         DataManager.isSaved = false;
         StartCoroutine("ScreenFadeOut");
@@ -204,9 +204,9 @@ public class ButtonManager : MonoBehaviour {
     public void LoadButtonClick()
     {
         SoundManager.sounds["Click (7)"].Play();
-        if (File.Exists(Application.persistentDataPath.Replace("/Andriod/data/kr.Hamma.pharmacy/files", "") + fileName))
+        if (File.Exists(Application.dataPath.Replace("/Assets", "") + fileName))
         {
-            StreamReader streamReader = new StreamReader(Application.persistentDataPath.Replace("/Andriod/data/kr.Hamma.pharmacy/files", "") + fileName);
+            StreamReader streamReader = new StreamReader(Application.dataPath.Replace("/Assets", "") + fileName);
             dataVo = JsonMapper.ToObject<DataVo>(streamReader.ReadToEnd());
             streamReader.Close();
             isExistFile = false;

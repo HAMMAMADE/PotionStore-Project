@@ -245,9 +245,9 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: "C:/Users/Han Jin Hee/Desktop/\uAC1C\uBC1C\uC791\uD488/The
-    Atelier of Rime/user.keystore"
-  AndroidKeyaliasName: hammamadekey
+  AndroidKeystoreName: C:/Users/Han Jin Hee/Desktop/Projects/PotionStore-Project/The
+    Atelier of Rime/user.keystore
+  AndroidKeyaliasName: 
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   AndroidEnableTango: 0

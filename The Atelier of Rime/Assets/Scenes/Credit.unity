@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Credit: {fileID: 599563522}
+  spriteRenderer: {fileID: 1716103526}
 --- !u!4 &946019
 Transform:
   m_ObjectHideFlags: 0
